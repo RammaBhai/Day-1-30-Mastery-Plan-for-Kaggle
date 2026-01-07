@@ -1,0 +1,66 @@
+🌟 Titanic EDA (No ML) Roadmap
+
+titanic_eda_day1/
+│
+├── 0️⃣ Setup & Imports
+│   ├── import pandas as pd
+│   ├── import numpy as np
+│   ├── import matplotlib.pyplot as plt
+│   └── import seaborn as sns
+│       └── sns.set(style="whitegrid")
+│
+├── 1️⃣ Load Dataset
+│   ├── url = Titanic CSV URL
+│   ├── df = pd.read_csv(url)
+│   └── display(df.head())
+│
+├── 2️⃣ Identify Columns
+│   ├── categorical_cols = object / category
+│   └── numerical_cols = int64 / float64
+│
+├── 3️⃣ Dataset Info & Stats
+│   ├── df.info()
+│   ├── df[numerical_cols].describe()
+│   └── df[categorical_cols].describe()
+│
+├── 4️⃣ Check Missing Values
+│   ├── df.isnull().sum()
+│   └── df.shape
+│
+├── 5️⃣ Handle Missing Values
+│   ├── df["Age"].fillna(median)
+│   ├── df.drop(columns=["Cabin"])
+│   └── df["Embarked"].fillna(mode)
+│
+├── 6️⃣ Drop Useless Columns
+│   └── ["PassengerId", "Name", "Ticket"]
+│
+├── 7️⃣ Map Pclass to Category (Optional)
+│   └── df["Pclass_category"] = {1:"High", 2:"Medium", 3:"Low"}
+│
+├── 8️⃣ Basic Survival Statistics
+│   ├── total_survived = df["Survived"].sum()
+│   ├── total_not_survived = df.shape[0] - total_survived
+│   └── survival_rate = (total_survived / df.shape[0]) * 100
+│
+├── 9️⃣ Prepare Input & Output
+│   ├── X = df.drop("Survived", axis=1)
+│   └── y = df["Survived"]
+│
+├── 🔟 Visualizations
+│   ├── 1️⃣ Survival Count
+│   ├── 2️⃣ Survival by Gender
+│   ├── 3️⃣ Survival by Passenger Class
+│   ├── 4️⃣ Survival by Embarked Port
+│   ├── 5️⃣ Age Distribution by Survival
+│   └── 6️⃣ Fare Distribution by Survival
+│
+├── 11️⃣ Correlation Heatmap
+│   └── df[numerical_cols].corr() → sns.heatmap
+│
+├── 12️⃣ Histograms for Numerical Columns
+│   └── df[numerical_cols].hist(figsize=(10,8), bins=20)
+│
+└── 13️⃣ Updated Columns After Preprocessing
+    ├── categorical_cols = object / category
+    └── numerical_cols = int64 / float64

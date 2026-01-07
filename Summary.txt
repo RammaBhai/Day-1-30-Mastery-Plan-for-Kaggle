@@ -1,0 +1,72 @@
+# =========================
+# 14️⃣ Titanic EDA Day 1 Summary
+# =========================
+
+"""
+Objective:
+- Perform Exploratory Data Analysis (EDA) on the Titanic dataset without applying ML models.
+
+Workflow Summary:
+1. Setup & Imports:
+   - Libraries: pandas, numpy, matplotlib, seaborn
+   - Set Seaborn style: whitegrid
+
+2. Load Dataset:
+   - Read CSV from URL
+   - Display first 5 rows
+
+3. Identify Column Types:
+   - Categorical: object / category
+   - Numerical: int64 / float64
+
+4. Dataset Info & Stats:
+   - df.info()
+   - describe() for numerical & categorical columns
+
+5. Check Missing Values:
+   - df.isnull().sum()
+   - Shape of dataset
+
+6. Handle Missing Values:
+   - Fill Age with median
+   - Drop Cabin
+   - Fill Embarked with mode
+
+7. Drop Useless Columns:
+   - PassengerId, Name, Ticket
+
+8. Map Pclass to Category (Optional):
+   - 1 → High, 2 → Medium, 3 → Low
+
+9. Basic Survival Statistics:
+   - Total survived / not survived
+   - Survival rate %
+
+10. Input (X) & Output (y):
+    - X = Features
+    - y = Target (Survived)
+
+11. Visualizations:
+    - Survival count plot
+    - Survival by Gender
+    - Survival by Passenger Class
+    - Survival by Embarked
+    - Age distribution by Survival
+    - Fare distribution by Survival
+
+12. Correlation Heatmap:
+    - Heatmap for numerical columns correlation
+
+13. Histograms:
+    - Histograms for all numerical columns
+
+14. Updated Columns:
+    - Check categorical & numerical columns after preprocessing
+
+Learning Outcome:
+- Understand dataset structure
+- Clean missing values
+- Basic feature engineering
+- Visualize patterns
+- Prepare data for ML modeling
+"""
