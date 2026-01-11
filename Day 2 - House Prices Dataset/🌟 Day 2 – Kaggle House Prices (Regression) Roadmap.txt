@@ -1,0 +1,81 @@
+🌟 Day 2 – Kaggle House Prices (Regression) Roadmap
+
+day2_house_prices/
+│
+├── Step_1_Load_Explore_Data (30–45 min)
+│   ├── Load datasets
+│   │     - train.csv
+│   │     - test.csv
+│   ├── Check data types
+│   │     - Numerical vs Categorical
+│   ├── Check missing values
+│   │     - df.isnull().sum()
+│   └── Visualizations
+│         - SalePrice distribution
+│         - Histograms for numeric features
+│         - Boxplots for outlier detection
+│
+├── Step_2_Exploratory_Data_Analysis (1 hr)
+│   ├── Correlation analysis
+│   │     - Correlation matrix
+│   │     - Identify top correlated features with SalePrice
+│   ├── Categorical vs Target
+│   │     - Neighborhood, OverallQual, etc.
+│   ├── Identify skewed numeric variables
+│   │     - Use skew() or visualization
+│
+├── Step_3_Feature_Engineering (1 hr)
+│   ├── Handle missing values
+│   │     - Numeric: median
+│   │     - Categorical: mode or "None"
+│   ├── Encode categorical features
+│   │     - One-Hot Encoding
+│   │     - Label Encoding
+│   ├── Transform target
+│   │     - Log-transform SalePrice if skewed
+│   └── Create new features
+│         - TotalSF = TotalBsmtSF + 1stFlrSF + 2ndFlrSF
+│
+├── Step_4_Train_Test_Split (30 min)
+│   ├── Split train dataset
+│   │     - 80% train, 20% validation
+│   ├── Separate features and target
+│         - X = df.drop("SalePrice", axis=1)
+│         - y = df["SalePrice"]
+│
+├── Step_5_Train_Regression_Models (1–1.5 hr)
+│   ├── Linear Regression (baseline)
+│   ├── Random Forest Regressor
+│   └── Optional: Gradient Boosting / XGBoost / LightGBM
+│
+├── Step_6_Evaluate_Models (30–45 min)
+│   ├── Metrics
+│   │     - RMSE (Root Mean Squared Error)
+│   │     - R² Score
+│   ├── Compare baseline vs advanced models
+│
+└── Step_7_Kaggle_Submission (30 min)
+      ├── Predict SalePrice on test.csv
+      ├── Export submission.csv
+      └── Submit predictions to Kaggle
+
+✅ Short Summary:
+
+**Goal:** Predict house prices accurately using regression models.
+
+**Focus:**
+- Thorough EDA → understand distributions, correlations, skewness.
+- Feature engineering → handle missing values, encode categorical variables, create new features.
+- Train baseline and advanced models → compare performance using RMSE and R².
+- Submit predictions to Kaggle for leaderboard evaluation.
+
+**Ideas & Suggestions:**
+- Start with simple models → then move to ensembles like Random Forest or Gradient Boosting.
+- Use log transformation for skewed SalePrice to improve model performance.
+- Visualize residuals after training → check model fit.
+- Save preprocessing steps (e.g., scikit-learn Pipelines) for reproducibility.
+
+**Future Thoughts:**
+- Automate feature engineering & model selection with sklearn pipelines or TPOT.
+- Explore advanced boosting frameworks (XGBoost, LightGBM, CatBoost).
+- Add hyperparameter tuning (GridSearchCV / RandomizedSearchCV) for top performance.
